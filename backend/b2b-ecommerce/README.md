@@ -3,7 +3,7 @@
 ## Overview
 
 This project is meant to examine your ability to structure, organize,
-and write a small web application. This project is meant to be at most a 3 hour
+and write a small web application. This project is meant to be at most a three hour
 exercise. If you find yourself going over the time limit, please stop and submit
 what you have.
 
