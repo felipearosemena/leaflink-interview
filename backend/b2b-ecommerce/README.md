@@ -24,11 +24,11 @@ another company
 * A Product is "sold" by one "seller" Company and can be in many orders.
 
 Given the above information, your task is to build and deliver a web application with a
-a public HTTP API interface to the core models/resources above, with the following specifications and requirements.
+public HTTP API interface to the core models/resources above, with the following specifications and requirements.
 
-- [ ] A new git repo with your project's code base. We are looking to see how organized your repo is and does it contain typical project folders and a thoughtful structure.
+- [ ] A new git repo with your project's code base.
 - [ ] A runnable python project that exposes an HTTP API interface
-- [ ] Data modeling
+- [ ] Data modeling that reflects the above relationships and makes some reasonable assumptions about fields and field data types
 - [ ] An HTTP API that offers the following
   - [ ] Documentation and clean url routing
   - [ ] Ability to LIST Company, Product, or Order objects
@@ -38,7 +38,7 @@ a public HTTP API interface to the core models/resources above, with the followi
 
 ## Deliverables
 
-- [ ] A link to a Git repository containing your work
+- [ ] A link to a Git repository containing your work. We are looking to see how organized your repo is and does it contain typical project folders and a thoughtful structure.
 - [ ]  A README file explaining which details how to run and interact with the app and the API it provides
 
 
