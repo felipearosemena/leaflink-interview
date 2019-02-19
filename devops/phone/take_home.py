@@ -51,6 +51,17 @@
 
 This application won't work! Your challenge is to fix that.
 
+Please connect this application to a persistent database
+and encapsulate it in such a way that you can send me a 
+zip of the dir and I can have this up and running if I have
+
+* Docker
+* Python
+* Flask
+* SqlAlchemy
+
+installed
+
 How you do so is entirely up to you. 
 
 HINT: Here at LeafLink we use docker-compose to manage our services 
