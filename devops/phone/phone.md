@@ -2,7 +2,7 @@
 
 ## Applicant must complete Question 1 + one of the other 4, answers must be at least 250 words
 
-* Given a  webapp (attached as zip) that needs to connect to Redis and Postgres, create a docker-compose or other orchestration file that will allow the webapp to talk to these services in a portable env. If you choose not to use an orchestration file, explain how you would otherwise connect them in a portable way, why this is a superior approach, and how you would scale it
+* Given a  webapp (attached as zip) that needs to connect to a Postgres DB, create a docker-compose or other orchestration file that will allow the webapp to talk to these services in a portable env. If you choose not to use an orchestration file, explain how you would otherwise connect them in a portable way, why this is a superior approach, and how you would scale it
 
 * What is an open source project of yours or that you contribute significantly to that you are proud of? Why did you build it / contribute to it? What are some challenges building and maintaining the project? How do you handle PRs, issues, and other collaborative tasks? 
 
