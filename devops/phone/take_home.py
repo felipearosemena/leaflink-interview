@@ -22,7 +22,7 @@
         *PMMMMMMhn. *x > M  .MMMM**""           
            ""**MMMMhx/.h/ .=*"                  
                     .3P"%....                   
-                  nP"     "*MMnx       DaFreakyG
+                  nP"     "*MMnx      
 
 
  /$$                      /$$$$$$  /$$ /$$           /$$            
