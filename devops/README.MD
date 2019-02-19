@@ -1,0 +1,24 @@
+# DevOps in-person interview 
+##Engineering (Jeff, Aaron, Chris)
+
+* "Simple" problem about log parsing: given this log of requests made to our server, we need to find and count up all instances of a certain API request. At first, just a simple awk/sed/grep solution, but then introduce considerations like making sure we don't include requests from own servers, requests from bots, etc
+
+* This can be a whiteboarding algo thing that turns into an extended discussion (where do the logs come from, can we do analytics as the logs come in rather than post-hoc, etc)
+
+* Discussion about previous roles, how they worked in a team 
+
+##HR / Biz (Amy, Suze, Claire) 
+
+*Culture fit, chillness, focus on instances where they took charge and had to learn a lot of new stuff at once
+
+##Michael / Zach (we can interview together and then I can end with a shorter 1-on-1)
+* Discuss answers to take home questions, what they want out of the role, where they want to take their career / skills
+* Discuss past roles, what they liked, what they didn't
+* General brain picking about tech, get a feel for how they operate
+
+##Talk with Ryan / follow up with Michael or Zach
+
+##Final decision 
+* Yes
+* No
+* There are no other choices
