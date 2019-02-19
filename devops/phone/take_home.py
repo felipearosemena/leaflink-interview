@@ -53,7 +53,7 @@ This application won't work! Your challenge is to fix that.
 
 How you do so is entirely up to you. 
 
-HINT: Here at LeafLink  we use docker-compose 
+HINT: Here at LeafLink we use docker-compose to manage our services 
 
 Deliverable: a zip or otherwise compressed file. This file
 MUST include take_home.py and it MUST include a README.MD
