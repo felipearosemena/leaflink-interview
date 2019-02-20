@@ -23,6 +23,7 @@ The candidate will build an _invoice generator_. Please see the [attached mocks]
 
 * Reference the [attached mocks](./resources/mocks.sketch) for design guidance
 * Line items should have _description_, _quantity_, _rate_ and _total_ fields
+* Ability to _add_ or _remove_ line items as needed
 * Provisions for _sub-total_, _taxes_ and _deductions_ fields
 * Add any other fields, requirements as needed
 * Your submission should be responsive, with a *small* and a *large* breakpoint
