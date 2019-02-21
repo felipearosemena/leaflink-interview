@@ -21,7 +21,7 @@ Open up *http://localhost:8080/* in your browser. Any code in the `public/` fold
 
 The candidate will build an _invoice generator_. Please see the [attached mocks](./resources/mocks.sketch) for design guidelines, and read these instructions carefully.
 
-* Reference the [attached mocks](./resources/mocks.sketch) for design guidance
+* Use the [attached mocks](./resources/mocks.sketch) for design guidance. These are not detailed designs, only a rough sketch that you may fill in as needed
 * Line items should have _description_, _quantity_, _rate_ and _total_ fields
 * Ability to _add_ or _remove_ line items as needed
 * Provisions for _sub-total_, _taxes_ and _deductions_ fields
