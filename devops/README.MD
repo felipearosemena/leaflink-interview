@@ -17,7 +17,7 @@
 
 ## DevOps in-person interview 
 
-### Engineering (Jeff, Aaron, Chris)
+### Engineering 
 
 * "Simple" problem about log parsing: given this log of requests made to our server, we need to find and count up all instances of a certain API request. At first, just a simple awk/sed/grep solution, but then introduce considerations like making sure we don't include requests from own servers, requests from bots, etc
 
@@ -25,16 +25,16 @@
 
 * Discussion about previous roles, how they worked in a team 
 
-### HR / Biz (Amy, Suze, Claire) 
+### HR / Biz
 
 * Culture fit, chillness, focus on instances where they took charge and had to learn a lot of new stuff at once
 
-### Michael / Zach (we can interview together and then I can end with a shorter 1-on-1)
+### Michael / Zach follow up
 * Discuss answers to take home questions, what they want out of the role, where they want to take their career / skills
 * Discuss past roles, what they liked, what they didn't
 * General brain picking about tech, get a feel for how they operate
 
-### Talk with Ryan / follow up with Michael or Zach
+### Talk with Ryan / Zach
 
 ### Final decision 
 * Yes
