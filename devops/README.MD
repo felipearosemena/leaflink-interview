@@ -2,6 +2,10 @@
 
 ## DevOps Phone Screen
 
+* Tell them a little about the company, the specific needs of the role, and what they would be working on Week 1. 
+
+* Answer any questions they have
+
 ## Take Home
 
 
