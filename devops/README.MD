@@ -19,9 +19,7 @@
 
 ### Engineering 
 
-* "Simple" problem about log parsing: given this log of requests made to our server, we need to find and count up all instances of a certain API request. At first, just a simple awk/sed/grep solution, but then introduce considerations like making sure we don't include requests from own servers, requests from bots, etc
-
-* This can be a whiteboarding algo thing that turns into an extended discussion (where do the logs come from, can we do analytics as the logs come in rather than post-hoc, etc)
+* Build upon the take home problem: how would you deploy it? Scale it? 
 
 * Discussion about previous roles, how they worked in a team 
 
