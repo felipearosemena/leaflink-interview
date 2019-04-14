@@ -29,7 +29,7 @@ export default class Invoice {
       this.taxRate = data.taxRate;
     }
 
-    if(data.deductions) {
+    if (data.deductions) {
       this.deductions = data.deductions;
     }
 

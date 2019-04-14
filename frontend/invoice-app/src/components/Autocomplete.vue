@@ -1,21 +1,22 @@
 <template>
   <div
+    class="wrapper"
     tabindex="0"
     @focus="focus"
     @blur="blur"
     @keydown="keydown"
     style="padding: 5px; border: 1px solid"
   >
-    <span style="apperance:button">create</span>
     <input
       :type="type"
       :value="value"
       @focus="focus"
       @blur="inputBlur"
+      @keydown="keydown"
       @input="change($event.target.value)"
     >
-    <div v-if="focused" ref="options">
-      <div v-for="(option, index) in options" :key="index" @click="change(option)" :style="highlightedIndex === index ? 'background: #f0f0f0;' : ''">
+    <div class="options" v-if="focused" ref="options">
+      <div class="option" v-for="(option, index) in options" :key="index" @click="change(option)" :style="highlightedIndex === index ? 'background: #f0f0f0;' : ''">
         {{ option }}
       </div>
     </div>
@@ -40,7 +41,6 @@ export default class Autocomplete extends Vue {
   public type!: '';
   public value!: '';
   public options!: [];
-  public createdOptions!: [];
   public $refs!: {
     options: HTMLElement,
   };
@@ -60,6 +60,10 @@ export default class Autocomplete extends Vue {
     const len = this.options.length;
     const type  = this.type;
     const index = this.highlightedIndex;
+
+    if (up || down) {
+      e.preventDefault();
+    }
 
     if (down) {
       this.highlightedIndex = len - 1 === index ? 0 : index + 1;

@@ -68,7 +68,6 @@
 </template>
 
 <script lang="ts">
-import { State, Mutation } from 'vuex-class';
 import { Component, Vue, Watch } from 'vue-property-decorator';
 import InvoiceModel, { InvoiceId } from '../models/Invoice';
 import Autocomplete from '../components/Autocomplete.vue';
