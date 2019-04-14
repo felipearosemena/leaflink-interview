@@ -5,9 +5,10 @@ import uuid from 'uuid';
 export type InvoiceId = number | string;
 
 export interface InvoiceData {
-  id: InvoiceId;
+  id?: InvoiceId;
   taxRate?: number;
-  lineItems: LineItem[];
+  lineItems?: LineItem[];
+  deductions?: number;
 }
 
 const defaultTaxRate = 0;
@@ -20,19 +21,29 @@ export default class Invoice {
   public lineItems: LineItem[] = [];
 
   constructor(data: InvoiceData = { id: uuid.v4(), lineItems: [] }) {
+    if (data.id) {
+      this.id = data.id;
+    }
+
     if (data.taxRate) {
       this.taxRate = data.taxRate;
     }
 
-    data.lineItems.map((line: LineItemData) => {
-      this.lineItems.push(new LineItem(line));
-    });
+    if(data.deductions) {
+      this.deductions = data.deductions;
+    }
+
+    if (data.lineItems) {
+      data.lineItems.map((line: LineItemData) => {
+        this.lineItems.push(new LineItem(line));
+      });
+    }
   }
 
-  public addLineItem(data: LineItemData, atIndex?: number): void {
+  public addLineItem(data: LineItemData, atIndex?: number|undefined): void {
     const newItem = new LineItem(data);
 
-    if (atIndex) {
+    if (atIndex !== undefined) {
       this.lineItems.splice(atIndex, 0, newItem);
     } else {
       this.lineItems.push(newItem);
@@ -56,7 +67,8 @@ export default class Invoice {
   }
 
   get total() {
-    const tax = this.subtotal * this.taxRate;
-    return this.subtotal + tax - this.deductions;
+    const deducted = this.subtotal - this.deductions;
+    const tax = deducted * this.taxRate;
+    return deducted + tax;
   }
 }
