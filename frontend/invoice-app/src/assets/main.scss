@@ -1,0 +1,178 @@
+
+/* ## Design Specifications
+
+### Typography
+
+* **Headline font:** Poppins
+* **Body Text Font:** Noto Sans
+> Fonts are available on [https://fonts.google.com/](https://fonts.google.com/)
+
+* **Headline (Desktop)** 48/56 Poppins
+* **Body Copy (Desktop)** 18/24 Noto Sans
+* **Headline (Mobile)** 32/36 Poppins
+* **Body Copy (Mobile)** 16/24 Noto Sans
+
+### Colors
+
+* **Blue Dream** #0072F0
+* **Green Crack** #1CE0AD
+* **LA Confidential** #0022AC
+* **NYC Diesel** #01BBB4
+* **White Widow** #FFFFFF
+* **Grandaddy Purp** #1B1443
+
+
+Additional information on Leaflink's brand guidelines may be found here [https://leaflink.com/our-brand/](https://leaflink.com/our-brand/).  */
+:root {
+  --c-blue-dream: #0072F0;
+  --c-green-crack: #1CE0AD;
+  --c-la-confidential: #0022AC;
+  --c-nyc-diesel: #01BBB4;
+  --c-nyc-diesel-dark: #017c78;
+  --c-white-widow: #FFFFFF;
+  --c-grandaddy-purp: #1B1443;
+  --c-grandaddy-purp-light: #eef2ff;
+
+  --table-border: 1px solid #e1e1e1;
+
+  --cell-height: 50px;
+
+  /* font families */
+  --body-font: 'Noto Sans', Helvetica, Arial, sans-serif;
+  --heading-font: 'Poppins', Helvetica, Arial, sans-serif;
+
+  /* body font */
+  --fs-body: 16px;
+  --lh-body: 24px;
+  --fs-headline: 32px;
+  --lh-headline: 36px;
+
+  @media screen and (min-width: var(--breakpoint-sm)) {
+    --fs-body: 18px;
+    --fs-headline: 48px;
+    --lh-headline: 56px;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--c-grandaddy-purp-light);
+  margin: 0;
+}
+
+#app {
+  font-family: var(--body-font);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  padding-bottom: 6rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--heading-font);
+  margin-top: 0;
+}
+
+@media screen and (min-width: var(--breakpoint-sm)) {
+  h1, h2, h3 {
+    font-size: var(--fs-headline-desk);
+    line-height: calc(var(--fs-headline-desk) / var(--lh-headline-desk));
+  }
+}
+
+table {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: var(--border-radius);
+}
+
+th {
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  font-family: var(--heading-font);
+}
+
+td, th {
+  padding: 1rem;
+  vertical-align: top;
+  height: var(--cell-height);
+  border: var(--table-border);
+
+  &:first-child {
+    border-left: none;
+  }
+
+  &:last-child {
+    border-right: none;
+  }
+
+  thead & {
+    border-top: none;
+  }
+
+  tr:last-child & {
+    border-bottom: none;
+  }
+}
+
+label {
+  cursor: pointer;
+  color: var(--c-grandaddy-purp);
+  font-size: 1rem;
+}
+
+input,
+select,
+textarea {
+  cursor: pointer;
+  display: block;
+  margin: 0;
+  width: 100%;
+  font-size: 1rem;
+  outline: none;
+  height: 40px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border: none;
+  border-bottom: 1px solid #e1e1e1;
+  transition: border-color .2s ease-in-out;
+
+  &:focus {
+    background-color: var(--c-grandaddy-purp-light);
+  }
+}
+
+textarea {
+  resize: vertical;
+  padding: .6rem 1rem;
+  line-height: 1.4rem;
+  height: auto;
+}
+
+select {
+  appearance: none;
+  border-radius: 0;
+}
+
+.btn {
+  font-size: 1rem;
+  background: var(--c-green-crack);
+  color: var(--c-grandaddy-purp);
+  padding: 1rem;
+  border: none;
+  font-family: var(--heading-font);
+  font-weight: bold;
+  cursor: pointer;
+  transition: all .2s ease-in-out;
+  outline: none;
+
+  &:hover,
+  &:focus {
+    background: var(--c-nyc-diesel);
+  }
+}

@@ -1,12 +1,9 @@
 import Invoice from './models/Invoice';
+import Router from 'vue-router';
 
 const KEY = 'invoice-app';
 
-type Callback =  () => void;
-type Listeners = Callback[];
-
 class Storage {
-  private listeners: Listeners = [];
   public restoreState() {
     const stored: string = localStorage.getItem(KEY) || '{}';
     const parsed = JSON.parse(stored);

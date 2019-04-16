@@ -7,6 +7,7 @@ const lineItem = (data: {} = {}): LineItem => new LineItem({
   description: 'desc',
   quantity: 1,
   rate: 1,
+  taxRate: 0,
   ...data,
 });
 
@@ -17,7 +18,6 @@ describe('Invoice model', () => {
     });
     expect(invoice.lineItems).toEqual([]);
     expect(invoice.id).toEqual(1);
-    expect(invoice.taxRate).toEqual(0);
   });
 
   test('adds line items', () => {
@@ -64,12 +64,12 @@ describe('Invoice model', () => {
     const item = lineItem({
       quantity: 2,
       rate: 100,
+      taxRate: 1,
     });
     const invoice = new Invoice({
-      taxRate: 0.12,
       deductions: 100,
       lineItems: [item, item],
     });
-    expect(invoice.total).toEqual(336);
+    expect(invoice.total).toEqual(700);
   });
 });

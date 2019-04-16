@@ -10,7 +10,7 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'invoice',
+      name: 'new-invoice',
       component: Invoice,
     },
   ],
