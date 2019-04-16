@@ -19,7 +19,7 @@ class Storage {
     const data = JSON.stringify(state);
     localStorage.setItem(KEY, data);
 
-    if(afterSave) {
+    if (afterSave) {
       afterSave();
     }
   }

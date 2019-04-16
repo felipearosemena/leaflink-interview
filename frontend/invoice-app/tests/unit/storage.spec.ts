@@ -7,8 +7,8 @@ describe('storage', () => {
     const afterSave = jest.fn();
     const state = {
       invoice: {
-        id: 'invoice-id'
-      }
+        id: 'invoice-id',
+      },
     };
     storage.saveState(state, afterSave);
     expect(localStorage.getItem(KEY)).toEqual(JSON.stringify(state));
@@ -24,4 +24,4 @@ describe('storage', () => {
     const restored = storage.restoreState();
     expect(restored.invoice.id).toEqual(state.invoice.id);
   });
-})
+});
