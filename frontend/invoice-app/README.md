@@ -1,90 +1,17 @@
-# Leaflink Code Challenge
-
-## Prerequisites
-* [node](https://nodejs.org/en/)
-* [npm](https://www.npmjs.com/get-npm)
-
-
-## Get started
-
-Unzip the zip file and `cd` into the project directory. Then:
-
-```
-$ npm install
-$ npm start
-```
-
-Open up *http://localhost:8080/* in your browser. Any code in the `public/` folder will be served. 
-
-
-## Overview
-
-The candidate will build an _invoice generator_. Please see the [attached mocks](./resources/mocks.sketch) for design guidelines, and read these instructions carefully.
-
-* Use the [attached mocks](./resources/mocks.sketch) for design guidance. These are not detailed designs, only a rough sketch that you may fill in as needed
-* Line items should have _description_, _quantity_, _rate_ and _total_ fields
-* Ability to _add_ or _remove_ line items as needed
-* Provisions for _sub-total_, _taxes_ and _deductions_ fields
-* Add any other fields, requirements as needed
-* Your submission should be responsive, with a *small* and a *large* breakpoint
-* Please ensure that your submission looks good across all viewport sizes!
-* Feel free to use any Javascript frameworks or libraries you are comfortable with
-* Feel free to include any CSS pre-compilers you are comfortable with
-* _Chrome compliance is all that's required_. All functions and features available in Chrome are in play.
-
-Nice to haves (not required but things to think about):
-
-* Adherence to accessibility standards
-* Documentation
-* Tests
-
-
-## Deliverables
-
-Please package your submission up into a zip file. _Do not include node_modules folders in the zip_. We should be able to unzip your submission and run it via:
-
-```
-$ npm i && npm start
-```
-
-
-## Design Specifications
-
-### Typography
-
-* **Headline font:** Poppins
-* **Body Text Font:** Noto Sans
-> Fonts are available on [https://fonts.google.com/](https://fonts.google.com/)
-
-* **Headline (Desktop)** 48/56 Poppins
-* **Body Copy (Desktop)** 18/24 Noto Sans
-* **Headline (Mobile)** 32/36 Poppins
-* **Body Copy (Mobile)** 16/24 Noto Sans
-
-### Colors
-
-* **Blue Dream** #0072F0
-* **Green Crack** #1CE0AD
-* **LA Confidential** #0022AC
-* **NYC Diesel** #01BBB4
-* **White Widow** #FFFFFF
-* **Grandaddy Purp** #1B1443
-
-
-Additional information on Leaflink's brand guidelines may be found here [https://leaflink.com/our-brand/](https://leaflink.com/our-brand/). 
-
 ## Docs
 
 # invoice-app
+
+Invoice generator built using vue-cli, Typescript & SASS.
 
 ## Project setup
 ```
 yarn install
 ```
 
-### Compiles and hot-reloads for development
+### Build and start http-server
 ```
-yarn run serve
+yarn run start
 ```
 
 ### Compiles and minifies for production
@@ -102,6 +29,32 @@ yarn run test
 yarn run lint
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Structure
 
+The app uses an MVC-like approach, with the main business logic defined in the form of models.
+
+### `src/main`
+
+App entry point, initializes vue instance.
+
+### `src/App`
+
+Vue component entry point, renders header & router
+
+### `src/storage`
+
+Basic localStorage for local caching / persisting data on page reload.
+
+### `src/models`
+
+- Invoice: Models all data for the invoice
+- LineItem: Models a single invoice line items, only the Invoice model initializes it internally.
+- TaxRate: Models a single tax rate (GST, HST, etc)
+
+### `src/components`
+
+Custom vue presenatational components.
+
+### `src/views`
+
+- Invoice: The main view of the app. Handles all CRUD operations. internally it intializes an instance of the `Invoice` model & assigns it to the `invoice` namespace in the vue instane
