@@ -15,10 +15,13 @@ class Storage {
 
     return parsed;
   }
-  public saveState(state: object, afterSave: () => void) {
+  public saveState(state: object, afterSave?: () => void) {
     const data = JSON.stringify(state);
     localStorage.setItem(KEY, data);
-    afterSave();
+
+    if(afterSave) {
+      afterSave();
+    }
   }
 }
 
