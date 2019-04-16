@@ -1,6 +1,4 @@
-## Docs
-
-# invoice-app
+# Leaflink Invoice App
 
 Invoice generator built using vue-cli, Typescript & SASS.
 
