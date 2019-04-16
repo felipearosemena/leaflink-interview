@@ -154,6 +154,10 @@
     &:hover {
       background: var(--grandaddy-purp-light);
     }
+
+    @media (max-width: 768px) {
+      border-bottom: 1px solid blue;
+    }
   }
 
   .col-controls {
@@ -242,6 +246,7 @@
 
   .footer {
     border-top: 2px solid var(--c-green-crack);
+    margin-top: -1px;
   }
 
   .footer-row td {

@@ -32,8 +32,10 @@ Additional information on Leaflink's brand guidelines may be found here [https:/
   --c-white-widow: #FFFFFF;
   --c-grandaddy-purp: #1B1443;
   --c-grandaddy-purp-light: #eef2ff;
+  --c-grey-light: #f5f5f5;
 
-  --table-border: 1px solid #e1e1e1;
+  --table-border-color: #e1e1e1;
+  --table-border: 1px solid var(--table-border-color);
   --cell-height: 60px;
 
   /* font families */
@@ -143,7 +145,7 @@ td, th {
     flex-wrap: wrap;
     justify-content: space-between;
     border-radius: 2px;
-    border-bottom: 1px solid var(--c-nyc-diesel);
+    border-bottom: var(--table-border);
   }
 
   th:not(:first-child) {
@@ -154,7 +156,7 @@ td, th {
     display: flex;
     align-items: center;
     position:  relative;
-    border-bottom: 1px solid #f2f2f2;
+    border-bottom: 1px solid var(--table-border-color);
   }
 
   td:before {
@@ -163,12 +165,13 @@ td, th {
     top: .1rem;
     display: block;
     font-size: 12px;
-    line-height: 1;
-    padding: 0 .25rem;
+    line-height: 1.5;
+    padding: 0 .5rem;
   }
 }
 
 label {
+  text-transform: capitalize;
   cursor: pointer;
   color: var(--c-grandaddy-purp);
   font-size: 1rem;
@@ -189,10 +192,10 @@ textarea {
   padding-left: .5rem;
   padding-right: .5rem;
   border: 1px solid transparent;
-  border-bottom: 1px solid #e1e1e1;
+  border-bottom: 1px solid var(--table-border-color);
 
   &:hover {
-    background-color:#f9f9f9;
+    background-color:var(--c-grey-light);
     transition: .2s ease-in-out;
   }
 
