@@ -3,7 +3,6 @@
     <header class="header">
 
       <h1>{{ title }}</h1>
-
       <div class="header-fields">
         <div class="header-field">
           <label for="customer">To</label>
@@ -54,19 +53,19 @@
                 </icon-button>
               </div>
             </td>
-            <td class="cell-desc cell-input">
+            <td class="cell-desc cell-input" data-title="description">
               <input type="text" :name="`${line.id}-description`" v-model="line.description" @click="select">
             </td>
-            <td class="cell-qty cell-input">
+            <td class="cell-qty cell-input" data-title="quantity">
               <input type="number" :name="`${line.id}-quantity`" v-model="line.quantity" @click="select">
             </td>
-            <td class="cell-rate cell-input">
+            <td class="cell-rate cell-input" data-title="rate">
               <input type="number" :name="`${line.id}-rate`" v-model="line.rate" @click="select">
             </td>
-            <td class="cell-total cell-input">
+            <td class="cell-total cell-input" data-title="total">
               <input type="number" :name="`${line.id}-total-before-tax`" v-model="line.totalBeforeTax" @click="select">
             </td>
-            <td class="cell-tax-rate cell-input">
+            <td class="cell-tax-rate cell-input" data-title="tax rate">
               <select :name="`${line.id}-tax-rate`" v-model="line.taxRate">
                 <option v-for="item in taxRates" :key="item.rate" :value="item.rate">
                   {{ item.name }} ({{ item.percentage }})
@@ -119,15 +118,14 @@
     position: relative;
     max-width: 1280px;
     min-height: 100vh;
-    padding: 1rem;
-    margin: auto;
+    padding: 5rem 1rem 8rem;
+    margin: 0 auto 4rem;
     background: white;
   }
 
   .header {
     max-width: 40rem;
-    margin: 0 auto 2rem;
-    padding: 2rem;
+    margin: 1rem auto 2rem;
   }
 
   .header h1 {
@@ -137,20 +135,19 @@
 
   .header-field {
     display: flex;
-    align-items: baseline;
+    align-items: center;
   }
 
   .header-field label {
     white-space: nowrap;
     padding-right: 1rem;
-    width: 6rem;
+    width: 4rem;
     flex-shrink: 0;
-    text-align: right;
   }
 
   .table-wrapper {
     background: white;
-    padding: 2rem;
+    margin: 0 -1rem;
   }
 
   .body-row {
@@ -160,35 +157,44 @@
   }
 
   .col-controls {
-    width: 80px;
+    margin-bottom: 1rem;
+    width: 100%;
   }
 
-  .col-desc {
-    width: 50%;
-    text-align: left;
-  }
+  /* Desktop column layout */
+  @media (min-width: 768px) {
+    .col-controls {
+      width: 80px;
+    }
 
-  .col-qty,
-  .col-rate,
-  .col-total {
-    text-align: right;
-  }
+    .col-desc {
+      width: 50%;
+      text-align: left;
+    }
 
-  .col-qty {
-    width: 20%;
-  }
+    .col-qty,
+    .col-rate,
+    .col-total {
+      text-align: right;
+    }
 
-  .col-rate {
-    width: 20%;
-  }
+    .col-qty {
+      width: 20%;
+    }
 
-  .col-total {
-    width: 20%;
-  }
+    .col-rate {
+      width: 20%;
+    }
 
-  .col-tax-rate {
-    width: 160px;
+    .col-total {
+      width: 20%;
+    }
+
+    .col-tax-rate {
+      width: 160px;
+    }
   }
+  /* End column layout */
 
   .cell-controls-inner {
     display: flex;
@@ -198,6 +204,11 @@
   .cell-controls {
     vertical-align: middle;
     padding: .5rem;
+    width: 80px;
+  }
+
+  .cell-desc {
+    width: auto;
   }
 
   .cell-input {
@@ -206,6 +217,19 @@
     input,
     select {
       height: 100%;
+      border: none;
+    }
+  }
+
+  .cell-rate,
+  .cell-qty,
+  .cell-total,
+  .cell-tax-rate {
+    width: 50%;
+
+    &:nth-last-child(1),
+    &:nth-last-child(2) {
+      border-bottom: none;
     }
   }
 
@@ -224,14 +248,17 @@
     line-height: 1rem;
     border: none;
     text-align: right;
+
+    @media (max-width: 768px) {
+      width: 50%;
+      text-align: right;
+      padding: 0 1rem;
+      justify-content: flex-end;
+    }
   }
 
   .footer-row td:last-child {
     width: 160px;
-  }
-
-  .footer-row input {
-    padding: 0;
   }
 </style>
 
@@ -294,7 +321,7 @@ export default class Invoice extends Vue {
   public alerts: string[] = [];
 
   get id() {
-    return this.$route.params.id;
+    return this.invoice.id;
   }
 
   get title() {

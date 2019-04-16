@@ -7,15 +7,21 @@
 <style scoped lang="scss">
   .icon {
     position: relative;
-    width: 20px;
-    height: 20px;
-    margin: 4px;
+    width: 24px;
+    height: 24px;
+    margin: 8px;
     padding: 0;
     border: none;
     outline: none;
+    background: transparent;
     cursor: pointer;
     transition: all .1s ease-in-out;
     fill: var(--c-blue-dream);
+
+    @media (min-width: 768px) {
+      width: 20px;
+      height: 20px;
+    }
 
     &:hover,
     &:focus {

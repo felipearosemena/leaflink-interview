@@ -34,8 +34,7 @@ Additional information on Leaflink's brand guidelines may be found here [https:/
   --c-grandaddy-purp-light: #eef2ff;
 
   --table-border: 1px solid #e1e1e1;
-
-  --cell-height: 50px;
+  --cell-height: 60px;
 
   /* font families */
   --body-font: 'Noto Sans', Helvetica, Arial, sans-serif;
@@ -47,15 +46,24 @@ Additional information on Leaflink's brand guidelines may be found here [https:/
   --fs-headline: 32px;
   --lh-headline: 36px;
 
-  @media screen and (min-width: var(--breakpoint-sm)) {
+  @media screen and (min-width: 768px) {
     --fs-body: 18px;
     --fs-headline: 48px;
     --lh-headline: 56px;
+    --cell-height: 50px;
   }
 }
 
 * {
   box-sizing: border-box;
+}
+
+html {
+  font-family: var(--body-font);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
 }
 
 body {
@@ -64,11 +72,6 @@ body {
 }
 
 #app {
-  font-family: var(--body-font);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-size: var(--fs-body);
-  line-height: var(--lh-body);
   padding-bottom: 6rem;
 }
 
@@ -77,10 +80,10 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
 }
 
-@media screen and (min-width: var(--breakpoint-sm)) {
+@media screen and (min-width: 768px) {
   h1, h2, h3 {
-    font-size: var(--fs-headline-desk);
-    line-height: calc(var(--fs-headline-desk) / var(--lh-headline-desk));
+    font-size: var(--fs-headline);
+    line-height: calc(var(--fs-headline) / var(--lh-headline));
   }
 }
 
@@ -91,16 +94,7 @@ table {
   border-radius: var(--border-radius);
 }
 
-th {
-  text-transform: uppercase;
-  letter-spacing: .1em;
-  font-family: var(--heading-font);
-}
-
-td, th {
-  padding: 1rem;
-  vertical-align: top;
-  height: var(--cell-height);
+td {
   border: var(--table-border);
 
   &:first-child {
@@ -110,13 +104,67 @@ td, th {
   &:last-child {
     border-right: none;
   }
+}
 
-  thead & {
-    border-top: none;
+th {
+  line-height: 1rem;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  font-family: var(--heading-font);
+}
+
+td, th {
+  padding: .5rem 1rem;
+  vertical-align: middle;
+  height: var(--cell-height);
+
+  @media screen and (min-width: 768px) {
+      thead & {
+        border-top: none;
+      }
+
+      tr:last-child & {
+        border-bottom: none;
+      }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  table, tbody, tfoot, thead, tr, td, th {
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: none;
+    flex-grow: 1;
   }
 
-  tr:last-child & {
-    border-bottom: none;
+  tr {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-radius: 2px;
+    border-bottom: 1px solid var(--c-nyc-diesel);
+  }
+
+  th:not(:first-child) {
+    display: none;
+  }
+
+  td {
+    display: flex;
+    align-items: center;
+    position:  relative;
+    border-bottom: 1px solid #f2f2f2;
+  }
+
+  td:before {
+    content: attr(data-title);
+    position: absolute;
+    top: .1rem;
+    display: block;
+    font-size: 12px;
+    line-height: 1;
+    padding: 0 .25rem;
   }
 }
 
@@ -129,21 +177,28 @@ label {
 input,
 select,
 textarea {
+  appearance: none;
+  border-radius: 0;
   cursor: pointer;
   display: block;
   margin: 0;
   width: 100%;
   font-size: 1rem;
+  height: var(--cell-height);
   outline: none;
-  height: 40px;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  border: none;
+  padding-left: .5rem;
+  padding-right: .5rem;
+  border: 1px solid transparent;
   border-bottom: 1px solid #e1e1e1;
-  transition: border-color .2s ease-in-out;
+
+  &:hover {
+    background-color:#f9f9f9;
+    transition: .2s ease-in-out;
+  }
 
   &:focus {
     background-color: var(--c-grandaddy-purp-light);
+    transition: none;
   }
 }
 

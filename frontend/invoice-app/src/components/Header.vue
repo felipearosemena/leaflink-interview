@@ -1,37 +1,34 @@
 <template>
   <header>
-    <a class="logo" :class="{ 'logo--sm': $mq === 'sm' }" href="https://leaflink.com" target="_blank">
-      <ll-logo v-if="$mq === 'sm'"/>
-      <leaflink-logo v-else />
-    </a>
+    <div class="container">
+      <a class="logo" :class="{ 'logo--sm': $mq === 'sm' }" href="https://leaflink.com" target="_blank">
+        <ll-logo v-if="$mq === 'sm'"/>
+        <leaflink-logo v-else />
+      </a>
+    </div>
   </header>
 </template>
 
 <style scoped lang="scss">
-  :root {
-    --breakpoint-sm: 768px;
-  }
-
   header {
     max-width: 1280px;
-    margin: auto;
     position: relative;
+    margin: auto;
     z-index: 100;
     height: 0;
   }
 
-
   .logo {
-    width: 240px;
-    height: 70px;
+    width: 200px;
+    height: 60px;
     display: block;
-    padding: 1rem;
     background: var(--c-grandaddy-purp);
+    padding: 1rem 2rem;
   }
 
   .logo--sm {
-    width: 70px;
-    position: absolute;
+    width: 60px;
+    padding: .75rem;
   }
 
   svg {
